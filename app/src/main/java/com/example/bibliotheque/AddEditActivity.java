@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AddEditActivity extends AppCompatActivity {
     public static final String EXTRA_MODE = "MODE";
     public static final String EXTRA_LIVRE = "LIVRE";
-    public static final String EXTRA_POSITION = "POSITION";
     public static final String MODE_ADD = "ADD";
     public static final String MODE_EDIT = "EDIT";
 
@@ -26,20 +25,17 @@ public class AddEditActivity extends AppCompatActivity {
 
     private String mode;
     private Livre livreAModifier;
-    private int positionLivre = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit);
 
-        // Active le bouton retour
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        // Liaison Java avec les vues XML
         tvTitreFormulaire = findViewById(R.id.tvTitreFormulaire);
         etTitre = findViewById(R.id.etTitre);
         etAuteur = findViewById(R.id.etAuteur);
@@ -47,16 +43,12 @@ public class AddEditActivity extends AppCompatActivity {
         switchDisponible = findViewById(R.id.switchDisponible);
         btnEnregistrer = findViewById(R.id.btnEnregistrer);
 
-        // Récupération du mode envoyé par MainActivity
         Intent intent = getIntent();
         mode = intent.getStringExtra(EXTRA_MODE);
 
         if (MODE_EDIT.equals(mode)) {
-            // Mode modification
             tvTitreFormulaire.setText("Modifier le livre");
             livreAModifier = (Livre) intent.getSerializableExtra(EXTRA_LIVRE);
-            positionLivre = intent.getIntExtra(EXTRA_POSITION, -1);
-
             if (livreAModifier != null) {
                 etTitre.setText(livreAModifier.getTitre());
                 etAuteur.setText(livreAModifier.getAuteur());
@@ -64,7 +56,6 @@ public class AddEditActivity extends AppCompatActivity {
                 switchDisponible.setChecked(livreAModifier.isDisponible());
             }
         } else {
-            // Mode ajout par défaut
             mode = MODE_ADD;
             tvTitreFormulaire.setText("Ajouter un livre");
         }
@@ -84,23 +75,14 @@ public class AddEditActivity extends AppCompatActivity {
 
         Livre livre;
         if (MODE_EDIT.equals(mode) && livreAModifier != null) {
-            // On garde le même id pour le livre modifié
-            livre = new Livre(
-                    livreAModifier.getId(),
-                    titre,
-                    auteur,
-                    isbn,
-                    disponible
-            );
+            livre = new Livre(livreAModifier.getId(), titre, auteur, isbn, disponible);
         } else {
-            // L'id sera ajusté côté MainActivity
             livre = new Livre(0, titre, auteur, isbn, disponible);
         }
 
         Intent resultIntent = new Intent();
         resultIntent.putExtra(EXTRA_MODE, mode);
         resultIntent.putExtra(EXTRA_LIVRE, livre);
-        resultIntent.putExtra(EXTRA_POSITION, positionLivre);
 
         setResult(RESULT_OK, resultIntent);
         finish();
@@ -108,22 +90,18 @@ public class AddEditActivity extends AppCompatActivity {
 
     private boolean validerFormulaire(String titre, String auteur, String isbn) {
         boolean formulaireValide = true;
-
         if (TextUtils.isEmpty(titre)) {
             etTitre.setError("Le titre est obligatoire");
             formulaireValide = false;
         }
-
         if (TextUtils.isEmpty(auteur)) {
             etAuteur.setError("L'auteur est obligatoire");
             formulaireValide = false;
         }
-
         if (!TextUtils.isEmpty(isbn) && isbn.length() < 10) {
             etIsbn.setError("L'ISBN doit contenir au moins 10 caractères");
             formulaireValide = false;
         }
-
         return formulaireValide;
     }
 
