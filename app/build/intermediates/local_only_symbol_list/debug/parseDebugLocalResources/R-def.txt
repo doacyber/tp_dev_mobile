@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id recyclerViewLivres
+id tvAuteurLivre
+id tvDisponibilite
+id tvIsbnLivre
+id tvTitreEcran
+id tvTitreLivre
+layout activity_main
+layout item_livre

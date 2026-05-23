@@ -1,5 +1,6 @@
 package com.example.bibliotheque;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,13 @@ public class LivreAdapter extends RecyclerView.Adapter<LivreAdapter.LivreViewHol
             holder.tvDisponibilite.setText("Indisponible");
             holder.tvDisponibilite.setBackgroundColor(Color.parseColor("#C62828"));
         }
+
+        // Ajout du clic pour ouvrir le détail (Lab 5)
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), DetailActivity.class);
+            intent.putExtra("livre", livre);
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
