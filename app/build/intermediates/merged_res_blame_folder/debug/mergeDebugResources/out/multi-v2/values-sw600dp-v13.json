@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.bibliotheque.app-mergeDebugResources-30:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.example.bibliotheque.app-mergeDebugResources-33:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/doacyber/.gradle/caches/9.0.0/transforms/11d16530a64a776abce03f4372f2ca73/transformed/material-1.11.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/doacyber/.gradle/caches/9.0.0/transforms/a26279cae878081983cddc5557c74f75/transformed/material-1.11.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/doacyber/.gradle/caches/9.0.0/transforms/dc950650b6adaf6658cf74f2dafadee7/transformed/appcompat-1.6.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/doacyber/.gradle/caches/9.0.0/transforms/6f2ee2107bd15f4f7c350e5cb4f1873a/transformed/appcompat-1.6.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

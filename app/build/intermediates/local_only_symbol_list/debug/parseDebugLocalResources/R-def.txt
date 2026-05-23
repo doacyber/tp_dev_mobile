@@ -1,10 +1,22 @@
 R_DEF: Internal format may change without notice
 local
+id btnEnregistrer
+id etAuteur
+id etIsbn
+id etTitre
+id fabAjouterLivre
 id recyclerViewLivres
+id switchDisponible
+id tvAuteur
 id tvAuteurLivre
 id tvDisponibilite
+id tvIsbn
 id tvIsbnLivre
+id tvTitre
 id tvTitreEcran
+id tvTitreFormulaire
 id tvTitreLivre
+layout activity_add_edit
+layout activity_detail
 layout activity_main
 layout item_livre
