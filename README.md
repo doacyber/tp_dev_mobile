@@ -16,19 +16,12 @@ Le projet est une application de gestion de bibliothèque permettant de lister, 
 - **Lab 6 : Formulaire d'ajout et de modification**
   - Création d'un formulaire pour saisir les informations d'un livre (titre, auteur, genre, etc.).
   - Gestion de l'ajout de nouveaux livres et de la modification de livres existants.
-  - Fichiers : `AddEditActivity.java`, `activity_add_edit.xml`
+  - Fichiers clés : `AddEditActivity.java`, `activity_add_edit.xml`
 
 - **Lab 7 : Persistance locale avec Room**
   - Intégration de la bibliothèque Room pour la base de données locale.
   - Définition de l'entité `Livre`, du DAO (`LivreDao`) et de la base de données (`AppDatabase`).
   - Persistance des données entre les sessions de l'application.
-
-## Documents PDF (Énoncés)
-
-Les énoncés des travaux pratiques sont disponibles à la racine du projet :
-- `Lab 5 : Navigation entre écrans et fiche détail`
-- `Lab 6 : Formulaire d’ajout et de modification`
-- `Lab 7 : Persistance locale avec Room`
 
 ## Structure du Projet
 
