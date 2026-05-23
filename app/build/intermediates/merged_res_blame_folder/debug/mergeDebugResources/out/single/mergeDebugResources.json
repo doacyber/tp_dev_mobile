@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.bibliotheque.app-debug-32:/layout_item_livre.xml.flat",
+        "source": "com.example.bibliotheque.app-main-34:/layout/item_livre.xml"
+    },
+    {
+        "merged": "com.example.bibliotheque.app-debug-32:/layout_activity_main.xml.flat",
+        "source": "com.example.bibliotheque.app-main-34:/layout/activity_main.xml"
+    }
+]
